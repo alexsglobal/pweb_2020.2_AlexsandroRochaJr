@@ -36,53 +36,35 @@
 	<h1>Lista de pessoas cadastradas</h1>
 
 <p><table>
+<thead>
   <tr>
     <th>Nome Completo</th>
     <th>Data De Nascimento</th>
     <th>E-mail</th>
 	<th>Sexo</th>
 	<th>Editar</th>
+	<th>Remover</th>
   </tr>
-  <tr>
-    <td>José</td>
-    <td>21/04/1975</td>
-    <td><a href="mailto:jose@outro.com">jose@outro.com</a></td>
-	<td>Masculino</td>
-	<td><a href="editar.html">Editar</a> <a href="#">  Remover</a>     </td>
-
- </tr>
- <tr>
-    <th>Nome Completo</th>
-    <th>Data De Nascimento</th>
-    <th>E-mail</th>
-	<th>Sexo</th>
-	<th>Editar</th>
-  </tr>
-  <tr>
-    <td>José</td>
-    <td>21/04/1975</td>
-    <td><a href="mailto:jose@outro.com">jose@outro.com</a></td>
-	<td>Masculino</td>
-	<td><a href="editar.html">Editar</a> <a href="#">  Remover</a>     </td>
-
- </tr>
-
- <tr>
-    <th>Nome Completo</th>
-    <th>Data De Nascimento</th>
-    <th>E-mail</th>
-	<th>Sexo</th>
-	<th>Editar</th>
-  </tr>
-  <tr>
-    <td>José</td>
-    <td>21/04/1975</td>
-    <td><a href="mailto:jose@outro.com">jose@outro.com</a></td>
-	<td>Masculino</td>
-	<td><a href="editar.html">Editar</a> <a href="#">  Remover</a>     </td>
-
- </tr>
-</p>
+  </thead>
+  <tbody>
+  <tr th:each="pessoa: ${pessoas}">
+  <td th:text="${pessoa.id}"></td>
+   <td th:text="${pessoa.nome}"></td>
+   <td>
+   <a th:href="'mailto:'+${pessoa.email}"th:text="${pessoa.email}"></a>
+   </td>
+   <td th:text="${#temporals.format(pessoa.dataNascimento,"dd/MM/yyyy")}"></td>
+   <td th:text="${pessoa.genero}"></td>
+   <td>
+   <a th:href="@{/editar/{id}(id=${pessoa.id})}">Editar</a>
+   </td>
+   <td>
+   <a th:href="@{/remover/{id}(id=${pessoa.id})}">Remover</a>
+   </td>
+   </tr>
+   </tbody>
+  
+    
 </table>
 
 	
