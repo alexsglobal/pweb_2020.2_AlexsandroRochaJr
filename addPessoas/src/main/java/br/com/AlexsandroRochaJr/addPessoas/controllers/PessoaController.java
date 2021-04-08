@@ -20,10 +20,6 @@ public class PessoaController {
 	
 	
 	
-	@GetMapping("/")
-	public String indexx () {
-	 return "index.html";
-	}
 	
 	@GetMapping("/index.html")
 	public String index () {
@@ -44,11 +40,8 @@ public class PessoaController {
 	mav.addObject("pessoas", lista);
 	return mav;
 	}
-	@GetMapping("/addPessoas.html")
-	public String addPessoas () {
-	 return "addPessoas.html";
-	}
 	
+
 	
 	}
 	
