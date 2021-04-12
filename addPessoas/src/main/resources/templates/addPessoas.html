@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta codigoSemana2="1975787779">
+   <link th:href="@{/public/favicon.ico}" rel= "icon" type="image/x-icon" /> 
     <link th:href="@{/css/style.css}" rel="stylesheet"/>
     <title>Spring de listar pessoas</title>
 </head>
@@ -12,25 +13,22 @@
 
 	<ul>
 	<table>
-	<tr>
-	<th><li><a href="index.html">   Início </a></li></th>		
-	</tr>
-<tr>
-	<th><li><a href="noticias.html">  Canais de Notícias  </a></li></th>
-</tr>
-<tr>
-	<th><li><a class= "active" href="addPessoas.html">   Adcionar pessoa </a></li>	
-	
-	
-		<li><a href="listarPessoas.html">   Listar pessoas </a></li></th>		
+		<tr>
+		<th><li><a href="/">   Início </a></li></th>		
 		</tr>
-<tr>
-	<th><li><a href="contato.html">Nos mande um E-Mail</a></li>
-
-	<li><a href="sobre.html">Sobre o site</a></li></th>
+	<tr>
+		<th><li><a href="/public/noticias.html">  Canais de Notícias  </a></li></th>
 	</tr>
-
-	</table>	  
+	<tr>
+		<th><li><a href="/addPessoas" class="active">   Adcionar pessoa </a></li>	
+			<li><a href="/listarPessoas">   Listar pessoas </a></li></th>		
+			</tr>
+	<tr>
+		<th><li><a href="/public/contato.html">Nos mande um E-Mail</a></li>
+<li><a href="/public/sobre.html">Sobre o site</a></li></th>
+		</tr>
+	
+		</table>
 	</ul>
 
 	<div style="margin-left:25%;padding:1px 16px;height:1000px;">

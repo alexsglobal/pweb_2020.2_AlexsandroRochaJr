@@ -5,28 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta codigoSemana2="1975787779">
-    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+    <link rel= "icon" type="image/x-icon" href="favicon.ico"/> 
+    <link href="/css/style.css" rel="stylesheet"/>
     <title>Spring de listar pessoas</title>
 </head>
 <body>
 	<ul>
 		<table>
 		<tr>
-		<th><li><a href="index.html">   Início </a></li></th>		
+		<th><li><a href="/">   Início </a></li></th>		
 		</tr>
 	<tr>
-		<th><li><a class="active" href="noticias.html">  Canais de Notícias  </a></li></th>
+		<th><li><a href="/public/noticias.html" class="active">  Canais de Notícias  </a></li></th>
 	</tr>
 	<tr>
-		<th><li><a href="addPessoas.html">   Adcionar pessoa </a></li>	
-		
-		
-			<li><a href="listarPessoas.html">   Listar pessoas </a></li></th>		
+		<th><li><a href="/addPessoas">   Adcionar pessoa </a></li>	
+			<li><a href="/listarPessoas">   Listar pessoas </a></li></th>		
 			</tr>
 	<tr>
-		<th><li><a href="contato.html">Nos mande um E-Mail</a></li>
-
-		<li><a href="sobre.html">Sobre o site</a></li></th>
+		<th><li><a href="/public/contato.html">Nos mande um E-Mail</a></li>
+<li><a href="/public/sobre.html">Sobre o site</a></li></th>
 		</tr>
 	
 		</table>	  
@@ -35,15 +33,11 @@
 	  <div style="margin-left:25%;padding:1px 16px;height:1000px;">
 		<h1>Sites de notícias</h1>
 		<h2>Veja as notícias no Google News: </h2>
-		<a th:href="https://news.google.com/" 
-		target="_blank" 
-		rel="noopener noreferrer">
+		<a href="https://news.google.com" >
 		Google News
 	</a>
 	<h2>Veja as notícias no site do Exame: </h2>
-	    <a th:href="https://exame.com/" 
-	    target="_blank" 
-	    rel="noopener noreferrer">
+	    <a href=https://exame.com">
 	    Exame 
 </a>
 	
