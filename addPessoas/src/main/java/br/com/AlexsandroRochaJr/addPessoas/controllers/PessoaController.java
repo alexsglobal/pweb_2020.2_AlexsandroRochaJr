@@ -37,6 +37,27 @@ public class PessoaController {
 	mav.addObject("pessoas", lista);
 	return mav;
 	}
+	@GetMapping("/addPessoas")
+	public ModelAndView formAddPessoas() {
+		ModelAndView modelAndView = new ModelAndView("addPessoas");
+		modelAndView.addObject(new Pessoa());
+		return modelAndView;
+	}
+	
+	@PostMapping("/addPessoas")
+	public String addPessoas(Pessoa aSalvar) {
+	this.pessoaRepo.save(aSalvar);
+	return "redirect:/listarPessoas";
+	}
+		@GetMapping("/editar/{id}")
+		public ModelAndView formEditar(@PathVariable("id")long id) {
+			Pessoa aEditar = pessoaRepo.findById(id)
+					.orElseThrow(() -> new IllegalArgumentException("ID inválido:"+ id));
+			
+			ModelAndView modelAndView = new ModelAndView("editar");
+			modelAndView.addObject(aEditar);
+			return modelAndView;
+			}
 	@PostMapping("/editar/{id}")
 	public ModelAndView editarPessoa(@PathVariable("id")long id, Pessoa pessoa) {
 	pessoaRepo.save(pessoa);
@@ -49,7 +70,7 @@ public ModelAndView removerPessoa(@PathVariable("id")long id) {
 	.orElseThrow(()	-> new IllegalArgumentException("ID inválido:" + id ));
 	
 	pessoaRepo.delete(aRemover);
-	return new ModelAndView("redirect: /listarPessoas");
+	return new ModelAndView("redirect:/listarPessoas");
 	}
 }
 	
